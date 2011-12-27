@@ -7,6 +7,8 @@ This portlet let you copy / paste HTML code from services like facebook, twitter
 
 The portlet is based on the static portlet, so you have the same options: omit borders, more url, ...
 
+You can find a demo at http://www.youtube.com/watch?v=it1hMtZKle8
+
 Credits
 =======
 
