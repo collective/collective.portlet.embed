@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.portlet.embed">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.portlet.embed"
+      directory="profiles/default"
+      description='Extension profile for collective.portlet.embed.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <permission
+    id="collective.portlet.embed.AddEmbedPortlet"
+    title="collective.portlet.embed: Add embed portlet"
+    />
+
+  <!-- Register the portlet -->
+  <plone:portlet
+      name="collective.portlet.embed.Embed"
+      interface=".portlet.IEmbedPortlet"
+      assignment=".portlet.Assignment"
+      view_permission="zope2.View"
+      edit_permission="collective.portlet.embed.AddEmbedPortlet"
+      renderer=".portlet.Renderer"
+      addview=".portlet.AddForm"
+      editview=".portlet.EditForm"
+      />
+
+</configure>
