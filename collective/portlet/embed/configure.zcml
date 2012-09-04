@@ -29,4 +29,7 @@
       editview=".portlet.EditForm"
       />
 
+  <i18n:registerTranslations directory="locales" />
+
+
 </configure>
