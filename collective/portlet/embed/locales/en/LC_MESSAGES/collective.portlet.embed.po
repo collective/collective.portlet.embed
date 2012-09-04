@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.dev0\n"
-"POT-Creation-Date: 2012-09-04 07:44+0000\n"
+"POT-Creation-Date: 2012-09-04 09:07+0000\n"
 "PO-Revision-Date: 2012-09-04 09:45+0100\n"
 "Last-Translator: Ralph Jacobs <ralph@fourdigits.nl>\n"
 "Language-Team: Four Digits <support@fourdigits.nl>\n"
@@ -14,30 +14,31 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.portlet.embed\n"
 
-#: ../portlet.py:24
+#: ./portlet.py:24
 msgid "HTML Code to embed"
 msgstr "HTML Code to embed"
 
-#: ../portlet.py:25
+#: ./portlet.py:25
 msgid "The html snippet you want to use. It can be iframe, javascript, html"
 msgstr "The html snippet you want to use. It can be iframe, javascript, html"
 
 #. Default: "A portlet which can display embed HTML code."
-#: ../portlet.py:61
+#: ./portlet.py:61
 msgid "description_portlet"
 msgstr "A portlet which can display embed HTML code."
 
 #. Default: "Add embed portlet"
-#: ../portlet.py:59
+#: ./portlet.py:59
 msgid "title_add_portlet"
 msgstr "Add embed portlet"
 
 #. Default: "Edit embed portlet"
-#: ../portlet.py:71
+#: ./portlet.py:71
 msgid "title_edit_portlet"
 msgstr "Edit embed portlet"
 
 #. Default: "Embed portlet"
-#: ../portlet.py:31
+#: ./portlet.py:31
 msgid "title_portlet"
 msgstr "Embed portlet"
+
