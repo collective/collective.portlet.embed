@@ -4,13 +4,14 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- Update translations [toutpt]
+- Added translations for english and dutch [ralphjacobs]
 
 1.0 (2012-02-13)
 ----------------
 
-- Nothing changed yet.
+- update package metadatas
+- add autoinclude
 
 
 1.0a1 (2011-12-27)
