@@ -4,8 +4,7 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- Added italian translation [keul]
 
 1.1 (2012-09-04)
 ----------------

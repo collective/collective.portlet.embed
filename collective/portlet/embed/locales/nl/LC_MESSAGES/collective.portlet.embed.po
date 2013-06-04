@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.dev0\n"
-"POT-Creation-Date: 2012-09-04 09:07+0000\n"
+"POT-Creation-Date: 2013-06-04 16:18+0000\n"
 "PO-Revision-Date: 2012-09-04 09:48+0100\n"
 "Last-Translator: Ralph Jacobs <ralph@fourdigits.nl>\n"
 "Language-Team: Four Digits <support@fourdigits.nl>\n"
@@ -13,6 +13,9 @@ msgstr ""
 "Language-Name: Dutch\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.portlet.embed\n"
+
+msgid "A new portlet that can contain embed HTML code"
+msgstr ""
 
 #: ./portlet.py:24
 msgid "HTML Code to embed"

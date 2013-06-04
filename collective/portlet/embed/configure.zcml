@@ -10,7 +10,7 @@
       name="default"
       title="collective.portlet.embed"
       directory="profiles/default"
-      description='Extension profile for collective.portlet.embed.'
+      description="A new portlet that can contain embed HTML code"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <permission
