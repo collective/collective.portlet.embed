@@ -22,7 +22,8 @@ class IEmbedPortlet(static.IStaticPortlet):
 
     text = schema.Text(
         title=_(u"HTML Code to embed"),
-        description=_(u"The html snippet you want to use. It can be iframe, javascript, html"),
+        description=_(u"The html snippet you want to use. It can be iframe, "
+                      u"javascript, html"),
         required=True)
 
 
@@ -46,7 +47,7 @@ class Renderer(static.Renderer):
 
     def text(self):
         return self.data.text
-    
+
     def css_class(self):
         """Generate a CSS class from the portlet header
         """
