@@ -8,34 +8,35 @@ from plone.portlets.interfaces import IPortletDataProvider
 from plone.portlets.interfaces import IPortletRenderer
 from plone.app.portlets.storage import PortletAssignmentMapping
 
-from collective.portlet.embed import embed
+from collective.portlet.embed import portlet
 from collective.portlet.embed.tests.base import IntegrationTestCase
 
 
 class TestPortlet(IntegrationTestCase):
 
     def test_portlet_type_registered(self):
-        portlet = getUtility(
+        portlet_embed = getUtility(
             IPortletType,
-            name='collective.portlet.embed.embed')
-        self.assertEquals(portlet.addview,
-                          'collective.portlet.embed.embed')
+            name='collective.portlet.embed.Embed')
+        self.assertEquals(portlet_embed.addview,
+                          'collective.portlet.embed.Embed')
 
     def test_interfaces(self):
         # TODO: Pass any keyword arguments to the Assignment constructor
-        portlet = embed.Assignment()
-        self.failUnless(IPortletAssignment.providedBy(portlet))
-        self.failUnless(IPortletDataProvider.providedBy(portlet.data))
+        portlet_embed = portlet.Assignment()
+        self.failUnless(IPortletAssignment.providedBy(portlet_embed))
+        self.failUnless(IPortletDataProvider.providedBy(portlet_embed.data))
 
     def test_invoke_add_view(self):
-        portlet = getUtility(
+        portlet_embed = getUtility(
             IPortletType,
-            name='collective.portlet.embed.embed')
-        mapping = self.portal.restrictedTraverse(
-            '++contextportlets++plone.leftcolumn')
+            name='collective.portlet.embed.Embed'
+        )
+        name = '++contextportlets++plone.leftcolumn'
+        mapping = self.portal.restrictedTraverse(name)
         for m in mapping.keys():
             del mapping[m]
-        addview = mapping.restrictedTraverse('+/' + portlet.addview)
+        addview = mapping.restrictedTraverse('+/' + portlet_embed.addview)
 
         # TODO: Pass a dictionary containing dummy form inputs from the add
         # form.
@@ -45,16 +46,16 @@ class TestPortlet(IntegrationTestCase):
 
         self.assertEquals(len(mapping), 1)
         self.failUnless(isinstance(mapping.values()[0],
-                                   embed.Assignment))
+                                   portlet.Assignment))
 
     def test_invoke_edit_view(self):
         # NOTE: This test can be removed if the portlet has no edit form
         mapping = PortletAssignmentMapping()
         request = self.folder.REQUEST
 
-        mapping['foo'] = embed.Assignment()
+        mapping['foo'] = portlet.Assignment()
         editview = getMultiAdapter((mapping['foo'], request), name='edit')
-        self.failUnless(isinstance(editview, embed.EditForm))
+        self.failUnless(isinstance(editview, portlet.EditForm))
 
     def test_obtain_renderer(self):
         context = self.folder
@@ -64,11 +65,11 @@ class TestPortlet(IntegrationTestCase):
                              context=self.portal)
 
         # TODO: Pass any keyword arguments to the Assignment constructor
-        assignment = embed.Assignment()
+        assignment = portlet.Assignment()
 
         renderer = getMultiAdapter(
             (context, request, view, manager, assignment), IPortletRenderer)
-        self.failUnless(isinstance(renderer, embed.Renderer))
+        self.failUnless(isinstance(renderer, portlet.Renderer))
 
 
 class TestRenderer(IntegrationTestCase):
@@ -83,14 +84,14 @@ class TestRenderer(IntegrationTestCase):
 
         # TODO: Pass any default keyword arguments to the Assignment
         # constructor.
-        assignment = assignment or embed.Assignment()
+        assignment = assignment or portlet.Assignment()
         return getMultiAdapter((context, request, view, manager, assignment),
                                IPortletRenderer)
 
     def test_render(self):
         # TODO: Pass any keyword arguments to the Assignment constructor.
         r = self.renderer(context=self.portal,
-                          assignment=embed.Assignment())
+                          assignment=portlet.Assignment())
         r = r.__of__(self.folder)
         r.update()
         #output = r.render()

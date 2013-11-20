@@ -5,12 +5,12 @@ from zope.formlib import form
 
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.portlet.static import static
-
 from plone.app.portlets.portlets import base
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from collective.portlet.embed import messageFactory as _
+
 
 class IEmbedPortlet(static.IStaticPortlet):
     """A portlet which renders predefined static HTML.
@@ -33,6 +33,7 @@ class Assignment(static.Assignment):
     text = u""
     omit_border = False
 
+
 class Renderer(static.Renderer):
     """Portlet renderer.
 
@@ -53,6 +54,7 @@ class Renderer(static.Renderer):
         normalizer = component.getUtility(IIDNormalizer)
         return "portlet-embed-%s" % normalizer.normalize(header)
 
+
 class AddForm(base.AddForm):
     """add form"""
     form_fields = form.Fields(IEmbedPortlet)
@@ -63,6 +65,7 @@ class AddForm(base.AddForm):
 
     def create(self, data):
         return Assignment(**data)
+
 
 class EditForm(base.EditForm):
     """Portlet edit form.
