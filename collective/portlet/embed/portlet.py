@@ -2,10 +2,12 @@ from zope import component
 from zope import schema
 from zope import interface
 from zope.formlib import form
+from z3c.form import field
 
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.portlet.static import static
 from plone.app.portlets.portlets import base
+from plone.app.portlets.browser import z3cformhelper
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -56,9 +58,9 @@ class Renderer(static.Renderer):
         return "portlet-embed-%s" % normalizer.normalize(header)
 
 
-class AddForm(base.AddForm):
+class AddForm(z3cformhelper.AddForm):
     """add form"""
-    form_fields = form.Fields(IEmbedPortlet)
+    fields = field.Fields(IEmbedPortlet)
     label = _(u"title_add_portlet",
               default=u"Add embed portlet")
     description = _(u"description_portlet",
@@ -68,10 +70,10 @@ class AddForm(base.AddForm):
         return Assignment(**data)
 
 
-class EditForm(base.EditForm):
+class EditForm(z3cformhelper.EditForm):
     """Portlet edit form.
     """
-    form_fields = form.Fields(IEmbedPortlet)
+    fields = field.Fields(IEmbedPortlet)
     label = _(u"title_edit_portlet",
               default=u"Edit embed portlet")
     description = _(u"description_portlet",

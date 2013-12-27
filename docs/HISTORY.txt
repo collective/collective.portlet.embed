@@ -4,7 +4,7 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Use z3cform for portlet addform/editform
 
 
 1.1 (2012-09-04)
