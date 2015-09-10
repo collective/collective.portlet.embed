@@ -24,7 +24,6 @@ msgstr "Una nuova portlet che può contenere codice HTML da integrare"
 msgid "HTML Code to embed"
 msgstr "Codice HTML da integrare"
 
-#: ./portlet.py:27
 msgid "The html snippet you want to use. It can be iframe, javascript, html"
 msgstr "Il pezzo di HTML che vuoi usare. Può essere un iframe, codice JavaScript, HTML, ..."
 
@@ -44,7 +43,7 @@ msgid "title_edit_portlet"
 msgstr "Modifica embed portlet"
 
 #. Default: "Embed portlet"
-#: ./portlet.py:34
+#: ./portlet.py:31
 msgid "title_portlet"
 msgstr ""
 
