@@ -1,12 +1,16 @@
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.portlet.embed import messageFactory as _
-from plone.app.portlets.browser import z3cformhelper
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.portlet.static import static
 from z3c.form import field
 from zope import component
 from zope import interface
 from zope import schema
+try:
+    from plone.app.portlets.browser import z3cformhelper as base
+except ImportError:
+    # Plone 5?
+    from plone.app.portlets.portlets import base
 
 
 class IEmbedPortlet(static.IStaticPortlet):
@@ -53,8 +57,9 @@ class Renderer(static.Renderer):
         return "portlet-embed-%s" % normalizer.normalize(header)
 
 
-class AddForm(z3cformhelper.AddForm):
+class AddForm(base.AddForm):
     """add form"""
+    schema = IEmbedPortlet
     fields = field.Fields(IEmbedPortlet)
     label = _(u"title_add_portlet",
               default=u"Add embed portlet")
@@ -65,9 +70,10 @@ class AddForm(z3cformhelper.AddForm):
         return Assignment(**data)
 
 
-class EditForm(z3cformhelper.EditForm):
+class EditForm(base.EditForm):
     """Portlet edit form.
     """
+    schema = IEmbedPortlet
     fields = field.Fields(IEmbedPortlet)
     label = _(u"title_edit_portlet",
               default=u"Edit embed portlet")
