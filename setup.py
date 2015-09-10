@@ -5,7 +5,7 @@ version = '1.2.1.dev0'
 
 setup(name='collective.portlet.embed',
       version=version,
-      description="Embed an html snippet in a Plone portlet",
+      description="Embed an HTML snippet in a Plone portlet",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
@@ -35,6 +35,7 @@ setup(name='collective.portlet.embed',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Products.CMFPlone>=4.0',
           'z3c.form',
       ],
       extras_require=dict(

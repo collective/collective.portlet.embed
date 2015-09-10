@@ -10,6 +10,8 @@ Changelog
 1.2 (2015-09-10)
 ----------------
 
+Plone 5 compatibility (dropped Plone 3.3)
+
 - Added italian translation [keul]
 - Use z3cform for portlet addform/editform [toutpt]
 
