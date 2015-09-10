@@ -33,5 +33,5 @@ class FunctionalTestCase(IntegrationTestCase):
     layer = testing.FUNCTIONAL
 
     def setUp(self):
-        #we must commit the transaction
+        # we must commit the transaction
         transaction.commit()
