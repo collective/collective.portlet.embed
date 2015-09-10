@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-10 10:32+0000\n"
+"POT-Creation-Date: 2015-09-10 10:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Luca Fabbri <keul@redturtle.it>\n"
 "Language-Team: plone-italian-translation-discussion <plone-italian-translation-discussion@lists.coactivate.org>\n"
@@ -24,6 +24,7 @@ msgstr "Una nuova portlet che può contenere codice HTML da integrare"
 msgid "HTML Code to embed"
 msgstr "Codice HTML da integrare"
 
+#: ./portlet.py:27
 msgid "The html snippet you want to use. It can be iframe, javascript, html"
 msgstr "Il pezzo di HTML che vuoi usare. Può essere un iframe, codice JavaScript, HTML, ..."
 
@@ -43,7 +44,7 @@ msgid "title_edit_portlet"
 msgstr "Modifica embed portlet"
 
 #. Default: "Embed portlet"
-#: ./portlet.py:31
+#: ./portlet.py:34
 msgid "title_portlet"
 msgstr ""
 
