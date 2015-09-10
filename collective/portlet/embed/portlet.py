@@ -1,17 +1,12 @@
-from zope import component
-from zope import schema
-from zope import interface
-from zope.formlib import form
-from z3c.form import field
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from collective.portlet.embed import messageFactory as _
+from plone.app.portlets.browser import z3cformhelper
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.portlet.static import static
-from plone.app.portlets.portlets import base
-from plone.app.portlets.browser import z3cformhelper
-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
-from collective.portlet.embed import messageFactory as _
+from z3c.form import field
+from zope import component
+from zope import interface
+from zope import schema
 
 
 class IEmbedPortlet(static.IStaticPortlet):
