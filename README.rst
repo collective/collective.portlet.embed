@@ -30,6 +30,7 @@ Contributors
 ------------
 
 - Ralph Jacobs <ralph@fourdigits.nl>
+- Luca Fabbri <luca@keul.it>
 
 .. |makinacom| image:: http://depot.makina-corpus.org/public/logo.gif
 .. _makinacom:  http://www.makina-corpus.com
