@@ -94,7 +94,7 @@ class TestRenderer(IntegrationTestCase):
                           assignment=portlet.Assignment())
         r = r.__of__(self.folder)
         r.update()
-        #output = r.render()
+        # output = r.render()
         # TODO: Test output
 
 

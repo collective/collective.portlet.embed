@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.dev0\n"
-"POT-Creation-Date: 2012-09-04 09:07+0000\n"
+"POT-Creation-Date: 2015-09-10 10:51+0000\n"
 "PO-Revision-Date: 2012-09-04 09:48+0100\n"
 "Last-Translator: Ralph Jacobs <ralph@fourdigits.nl>\n"
 "Language-Team: Four Digits <support@fourdigits.nl>\n"
@@ -14,31 +14,34 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.portlet.embed\n"
 
-#: ./portlet.py:24
+msgid "A new portlet that can contain embed HTML code"
+msgstr ""
+
+#: ./portlet.py:26
 msgid "HTML Code to embed"
 msgstr "HTML Code welke embed moet worden"
 
-#: ./portlet.py:25
+#: ./portlet.py:27
 msgid "The html snippet you want to use. It can be iframe, javascript, html"
 msgstr "De html snippet welke je wilt gebruiken. Dit kan een iframe, javascript of html zijn"
 
 #. Default: "A portlet which can display embed HTML code."
-#: ./portlet.py:61
+#: ./portlet.py:66
 msgid "description_portlet"
 msgstr "Een portlet welke embedded HTML code laat zien."
 
 #. Default: "Add embed portlet"
-#: ./portlet.py:59
+#: ./portlet.py:64
 msgid "title_add_portlet"
 msgstr "Voeg embed portlet toe"
 
 #. Default: "Edit embed portlet"
-#: ./portlet.py:71
+#: ./portlet.py:77
 msgid "title_edit_portlet"
 msgstr "Wijzig embed portlet"
 
 #. Default: "Embed portlet"
-#: ./portlet.py:31
+#: ./portlet.py:34
 msgid "title_portlet"
 msgstr "Embed portlet"
 
