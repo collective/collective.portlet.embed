@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-10 10:51+0000\n"
+"POT-Creation-Date: 2017-03-02 12:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,34 +17,46 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.portlet.embed\n"
 
+#: ./configure.zcml:16
 msgid "A new portlet that can contain embed HTML code"
 msgstr ""
 
-#: ./portlet.py:26
+#: ./portlet.py:33
+msgid "CSS class to add to the portlet"
+msgstr ""
+
+#: ./portlet.py:25
 msgid "HTML Code to embed"
 msgstr ""
 
-#: ./portlet.py:27
+#: ./portlet.py:31
+msgid "Portlet class"
+msgstr ""
+
+#: ./portlet.py:26
 msgid "The html snippet you want to use. It can be iframe, javascript, html"
 msgstr ""
 
+#: ./configure.zcml:16
+msgid "collective.portlet.embed"
+msgstr ""
+
 #. Default: "A portlet which can display embed HTML code."
-#: ./portlet.py:66
+#: ./portlet.py:85
 msgid "description_portlet"
 msgstr ""
 
 #. Default: "Add embed portlet"
-#: ./portlet.py:64
+#: ./portlet.py:83
 msgid "title_add_portlet"
 msgstr ""
 
 #. Default: "Edit embed portlet"
-#: ./portlet.py:77
+#: ./portlet.py:97
 msgid "title_edit_portlet"
 msgstr ""
 
 #. Default: "Embed portlet"
-#: ./portlet.py:34
+#: ./portlet.py:39
 msgid "title_portlet"
 msgstr ""
-
