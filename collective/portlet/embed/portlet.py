@@ -27,6 +27,12 @@ class IEmbedPortlet(static.IStaticPortlet):
                       u"javascript, html"),
         required=True)
 
+    portlet_class = schema.TextLine(
+        title=_(u"Portlet class"),
+        required=False,
+        description=_(u"CSS class to add to the portlet")
+    )
+
 
 class Assignment(static.Assignment):
     interface.implements(IEmbedPortlet)
@@ -34,6 +40,16 @@ class Assignment(static.Assignment):
 
     text = u""
     omit_border = False
+    portlet_class = ''
+
+    def __init__(self, header=u"", text=u"", omit_border=False, footer=u"",
+                 more_url='', portlet_class=''):
+        self.header = header
+        self.text = text
+        self.omit_border = omit_border
+        self.footer = footer
+        self.more_url = more_url
+        self.portlet_class = portlet_class
 
 
 class Renderer(static.Renderer):
@@ -50,11 +66,14 @@ class Renderer(static.Renderer):
         return self.data.text
 
     def css_class(self):
-        """Generate a CSS class from the portlet header
+        """Generate a CSS class from the portlet header and class attributes
         """
         header = self.data.header
         normalizer = component.getUtility(IIDNormalizer)
-        return "portlet-embed-%s" % normalizer.normalize(header)
+        result_class = "portlet-embed-%s" % normalizer.normalize(header)
+        if self.data.portlet_class:
+            result_class += " %s" % self.data.portlet_class
+        return result_class
 
 
 class AddForm(base.AddForm):
