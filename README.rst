@@ -9,6 +9,11 @@ The portlet is based on the static portlet, so you have the same options: omit b
 
 You can find a demo at http://www.youtube.com/watch?v=it1hMtZKle8
 
+Plone 5 compatibility
+=====================
+
+Works also in Plone 5, tested with youtube
+
 Credits
 =======
 
