@@ -71,6 +71,36 @@ class TestPortlet(IntegrationTestCase):
             (context, request, view, manager, assignment), IPortletRenderer)
         self.failUnless(isinstance(renderer, portlet.Renderer))
 
+    def test_correct_css_class_if_not_set(self):
+        context = self.folder
+        request = self.folder.REQUEST
+        view = self.folder.restrictedTraverse('@@plone')
+        manager = getUtility(IPortletManager, name='plone.rightcolumn',
+                             context=self.portal)
+
+        assignment = portlet.Assignment(header='Header')
+
+        renderer = getMultiAdapter(
+            (context, request, view, manager, assignment), IPortletRenderer)
+        self.assertEqual(renderer.css_class(), 'portlet-embed-header')
+
+    def test_correct_css_class_if_set(self):
+        context = self.folder
+        request = self.folder.REQUEST
+        view = self.folder.restrictedTraverse('@@plone')
+        manager = getUtility(IPortletManager, name='plone.rightcolumn',
+                             context=self.portal)
+
+        assignment = portlet.Assignment(
+            header='Header',
+            portlet_class='test-class',
+        )
+
+        renderer = getMultiAdapter(
+            (context, request, view, manager, assignment), IPortletRenderer)
+        self.assertEqual(renderer.css_class(),
+                         'portlet-embed-header test-class')
+
 
 class TestRenderer(IntegrationTestCase):
 
