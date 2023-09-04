@@ -1,11 +1,11 @@
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.portlet.embed import messageFactory as _
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.portlet.static import static
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from z3c.form import field
-from zope import component
-from zope import interface
-from zope import schema
+from zope import component, schema
+from zope.interface import implementer
+
 try:
     from plone.app.portlets.browser import z3cformhelper as base
 except ImportError:
@@ -33,9 +33,8 @@ class IEmbedPortlet(static.IStaticPortlet):
         description=_(u"CSS class to add to the portlet")
     )
 
-
+@implementer(IEmbedPortlet)
 class Assignment(static.Assignment):
-    interface.implements(IEmbedPortlet)
     header = _(u"title_portlet", default=u"Embed portlet")
 
     text = u""
