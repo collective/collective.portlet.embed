@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0.0 (unreleased)
+2.0.0 (2025-07-29)
 ------------------
 
 - compatibility with Plone 6 [MrTango]
