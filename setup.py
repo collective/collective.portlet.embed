@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 import os
 
 version = '2.0.1.dev0'
@@ -27,8 +27,7 @@ setup(name='collective.portlet.embed',
       maintainer_email='luca@keul.it',
       url='https://github.com/collective/collective.portlet.embed',
       license='GPL',
-      packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['collective', 'collective.portlet'],
+      packages=find_namespace_packages(include=['collective.*']),
       include_package_data=True,
       zip_safe=False,
       install_requires=[
