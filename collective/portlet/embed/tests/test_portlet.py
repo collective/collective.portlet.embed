@@ -1,4 +1,4 @@
-import unittest2 as unittest
+import unittest
 
 from zope.component import getUtility, getMultiAdapter
 from plone.portlets.interfaces import IPortletType
@@ -18,14 +18,14 @@ class TestPortlet(IntegrationTestCase):
         portlet_embed = getUtility(
             IPortletType,
             name='collective.portlet.embed.Embed')
-        self.assertEquals(portlet_embed.addview,
+        self.assertEqual(portlet_embed.addview,
                           'collective.portlet.embed.Embed')
 
     def test_interfaces(self):
         # TODO: Pass any keyword arguments to the Assignment constructor
         portlet_embed = portlet.Assignment()
-        self.failUnless(IPortletAssignment.providedBy(portlet_embed))
-        self.failUnless(IPortletDataProvider.providedBy(portlet_embed.data))
+        self.assertTrue(IPortletAssignment.providedBy(portlet_embed))
+        self.assertTrue(IPortletDataProvider.providedBy(portlet_embed.data))
 
     def test_invoke_add_view(self):
         portlet_embed = getUtility(
@@ -44,8 +44,8 @@ class TestPortlet(IntegrationTestCase):
         # addview() instead of the next line.
         addview.createAndAdd(data={})
 
-        self.assertEquals(len(mapping), 1)
-        self.failUnless(isinstance(mapping.values()[0],
+        self.assertEqual(len(mapping), 1)
+        self.assertTrue(isinstance(mapping.values()[0],
                                    portlet.Assignment))
 
     def test_invoke_edit_view(self):
@@ -55,7 +55,7 @@ class TestPortlet(IntegrationTestCase):
 
         mapping['foo'] = portlet.Assignment()
         editview = getMultiAdapter((mapping['foo'], request), name='edit')
-        self.failUnless(isinstance(editview, portlet.EditForm))
+        self.assertTrue(isinstance(editview, portlet.EditForm))
 
     def test_obtain_renderer(self):
         context = self.folder
@@ -69,7 +69,7 @@ class TestPortlet(IntegrationTestCase):
 
         renderer = getMultiAdapter(
             (context, request, view, manager, assignment), IPortletRenderer)
-        self.failUnless(isinstance(renderer, portlet.Renderer))
+        self.assertTrue(isinstance(renderer, portlet.Renderer))
 
     def test_correct_css_class_if_not_set(self):
         context = self.folder
@@ -122,7 +122,6 @@ class TestRenderer(IntegrationTestCase):
         # TODO: Pass any keyword arguments to the Assignment constructor.
         r = self.renderer(context=self.portal,
                           assignment=portlet.Assignment())
-        r = r.__of__(self.folder)
         r.update()
         # output = r.render()
         # TODO: Test output
